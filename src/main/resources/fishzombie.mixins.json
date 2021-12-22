@@ -1,0 +1,13 @@
+{
+  "required": true,
+  "minVersion": "0.8",
+  "package": "se.leddy231.fishzombie.mixin",
+  "compatibilityLevel": "JAVA_16",
+  "mixins": [
+    "FishZombieMixin",
+    "FishBobberAccessor"
+  ],
+  "injectors": {
+    "defaultRequire": 1
+  }
+}
