@@ -2,7 +2,6 @@
   "schemaVersion": 1,
   "id": "leddy231-fishzombie",
   "version": "1.0.0",
-
   "name": "Fish Zombie",
   "description": "Reeling in a fish has a 1 in 10 chance to summon a Drowned Zombie (Breaks AFK Fish Farms)",
   "authors": [
@@ -12,10 +11,8 @@
     "homepage": "https://fabricmc.net/",
     "sources": "https://github.com/FabricMC/fabric-example-mod"
   },
-
   "license": "CC0-1.0",
   "icon": "assets/fishzombie/icon.png",
-
   "environment": "*",
   "entrypoints": {
     "main": [
@@ -25,13 +22,11 @@
   "mixins": [
     "fishzombie.mixins.json"
   ],
-
   "depends": {
     "fabricloader": ">=0.11.3",
     "fabric": "*",
-    "minecraft": "1.18.x",
+    "minecraft": "1.20.x",
     "java": ">=17"
   },
-  "suggests": {
-  }
+  "suggests": {}
 }

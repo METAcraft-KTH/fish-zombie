@@ -4,8 +4,8 @@
   "package": "se.leddy231.fishzombie.mixin",
   "compatibilityLevel": "JAVA_16",
   "mixins": [
-    "FishZombieMixin",
-    "FishBobberAccessor"
+    "FishingHookMixin",
+    "FishingHookAccessor"
   ],
   "injectors": {
     "defaultRequire": 1
