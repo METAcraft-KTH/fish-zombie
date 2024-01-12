@@ -34,9 +34,9 @@ public abstract class FishingHookMixin extends Projectile {
 			return;
 		}
 		if (accessor.getNibble() > 0 && level.random.nextInt(10) == 0) {
-			FishZombie.LOGGER.info(player.getGameProfile().getName() + " hooked a zombie!");
+			FishZombie.LOGGER.info(player.getDisplayName().getString() + " hooked a zombie!");
 			var zombie = new Drowned(EntityType.DROWNED, level);
-			zombie.setPos(hook.getX(), hook.getY(), hook.getZ());
+			zombie.setPos(hook.getX(), hook.getY()-1, hook.getZ());
 			zombie.finalizeSpawn(
 					(ServerLevelAccessor) level, level.getCurrentDifficultyAt(zombie.blockPosition()), MobSpawnType.EVENT,
 					new Zombie.ZombieGroupData(Zombie.getSpawnAsBabyOdds(level.random), false), null
@@ -44,7 +44,8 @@ public abstract class FishingHookMixin extends Projectile {
 			zombie.setItemInHand(InteractionHand.MAIN_HAND, ItemStack.EMPTY);
 			zombie.setItemInHand(InteractionHand.OFF_HAND, ItemStack.EMPTY);
 			zombie.setTarget(player);
-			Vec3 vec3 = new Vec3(player.getX() - this.getX(), player.getY() - this.getY(), player.getZ() - this.getZ()).scale(0.1);
+			zombie.hurt(level.damageSources().playerAttack(player), 0);
+			Vec3 vec3 = new Vec3(player.getX() - this.getX(), player.getY() - this.getY() + 2, player.getZ() - this.getZ()).scale(0.2);
 			zombie.setDeltaMovement(zombie.getDeltaMovement().add(vec3));
 			level.addFreshEntity(zombie);
 		}
